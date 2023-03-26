@@ -1,7 +1,10 @@
 {% block content %}
     {% include 'votacao/snippets/nav.html' %}
 
-    <p>Email : {{ aluno.user.email }}</p>
-    <p>Cruso: {{ aluno.curso }}</p>
+    <p>Nome: {{ request.user.username }}</p>
+    <p>Email : {{ request.user.email }}</p>
+    {% if request.user.aluno %}}
+    <p>Cruso: {{ request.user.aluno.curso }}</p>
+    {% endif %}
 
 {% endblock %}

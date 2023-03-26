@@ -128,23 +128,17 @@ def save_option(request, questao_id):
 def criarAluno(request):
     if request.method == 'POST':
         try:
-            nome = request.POST.get('nome')
-            email = request.POST.get('email')
-            grupo = request.POST.get('grupo')
-            curso = request.POST.get('curso')
-        except KeyError:
-                return render(request, 'votacao/criarAluno.html')
-
-        if nome and email and grupo and curso:
-            user = User.objects.create_user(nome, email)
-            user.save()
-            aluno = Aluno.objects.create(user=user, grupo=grupo, curso=curso)
-            aluno.save()
-            return HttpResponseRedirect(reverse('votacao:login'))
-        else:
-            return HttpResponseRedirect(reverse('votacao:criarAluno'))
+            form = AlunoForm(request.POST)
+            if form.is_valid():
+                form.save()  # modelForm
+                return HttpResponseRedirect(reverse('votacao:index'))
+        except Exception:
+            form = AlunoForm()
+            # Mostrar Erro
+            return render(request, 'votacao/criarAluno.html', {'form': form})
     else:
-        return render(request, 'votacao/criarAluno.html')
+        form = AlunoForm()
+    return render(request, 'votacao/criarAluno.html', {'form': form})
 
 
 def loginview(request):

@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4cc414e8-d188-42fc-989e-1ddcd741f60e" name="Changes" comment="eu tentei x2">
+    <list default="true" id="4cc414e8-d188-42fc-989e-1ddcd741f60e" name="Changes" comment="eu tentei x3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/detalhe.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/detalhe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/resultados.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/resultados.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/votacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +135,8 @@
       <workItem from="1679770050021" duration="886000" />
       <workItem from="1679771521098" duration="6705000" />
       <workItem from="1679835347837" duration="8055000" />
-      <workItem from="1679857440071" duration="6580000" />
+      <workItem from="1679857440071" duration="6846000" />
+      <workItem from="1679870437428" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="falta 5.3">
       <created>1679444736665</created>
@@ -177,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679845687307</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="eu tentei x3">
+      <created>1679868991781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679868991781</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +213,8 @@
     <MESSAGE value="5 feito" />
     <MESSAGE value="eu tentei" />
     <MESSAGE value="eu tentei x2" />
-    <option name="LAST_COMMIT_MESSAGE" value="eu tentei x2" />
+    <MESSAGE value="eu tentei x3" />
+    <option name="LAST_COMMIT_MESSAGE" value="eu tentei x3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/siteiscte$0002_aluno.coverage" NAME="0002_aluno Coverage Results" MODIFIED="1679770518721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/siteiscte/votacao/migrations" />

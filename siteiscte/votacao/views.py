@@ -7,9 +7,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.utils import timezone
 from django.views.generic import DetailView
-
 from .models import Questao, Opcao, Aluno
-from .form import OptionForm, AlunoForm, LoginForm
 
 
 @login_required(login_url='votacao/login')
@@ -86,12 +84,9 @@ def voto(request, questao_id):
             opcao_seleccionada.delete()
             return render(request, 'votacao/detalhe.html', {'questao': questao, })
         if not request.user.is_superuser:
-            numeroGrupo = request.user.aluno.grupo[-2]
             try:
-                numeroGrupo = int(numeroGrupo) + 10
-                print(numeroGrupo < request.user.aluno.votos)
-                if numeroGrupo > request.user.aluno.votos:
-                    request.user.aluno.votos += 1
+                if 26 > request.user.aluno.votos:
+                    request.user.aluno.adicionar_voto()
                     opcao_seleccionada.votos += 1
                     opcao_seleccionada.save()
             except ValueError:
@@ -128,35 +123,42 @@ def save_option(request, questao_id):
 def criarAluno(request):
     if request.method == 'POST':
         try:
-            form = AlunoForm(request.POST)
-            if form.is_valid():
-                form.save()  # modelForm
-                return HttpResponseRedirect(reverse('votacao:index'))
-        except Exception:
-            form = AlunoForm()
-            # Mostrar Erro
-            return render(request, 'votacao/criarAluno.html', {'form': form})
+            nome = request.POST.get('nome')
+            email = request.POST.get('email')
+            curso = request.POST.get('curso')
+            password = request.POST.get('password')
+        except KeyError:
+            return render(request, 'votacao/criarAluno.html')
+
+        if nome and email and curso and password:
+            user = User.objects.create_user(nome, email, password)
+            user.save()
+            aluno = Aluno.objects.create(user=user, curso=curso)
+            aluno.save()
+            return HttpResponseRedirect(reverse('votacao:login'))
+        else:
+            return HttpResponseRedirect(reverse('votacao:criarAluno'))
     else:
-        form = AlunoForm()
-    return render(request, 'votacao/criarAluno.html', {'form': form})
+        return render(request, 'votacao/criarAluno.html')
 
 
 def loginview(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        print(form.is_valid())
-        # if form.is_valid(): # questão??
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse('votacao:index'))
-    # else:
-    #    messages.error(request, 'Invalid username or password.')
+        try:
+            nome = request.POST.get('nome')
+            password = request.POST.get('password')
+        except KeyError:
+            return render(request, 'votacao/login.html')
+
+        if nome and password:
+            user = authenticate(username=nome, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('votacao:index'))
+            else:
+                return HttpResponseRedirect(reverse('votacao:criarAluno'))
     else:
-        form = LoginForm()
-    return render(request, 'votacao/login.html', {'form': form})
+        return render(request, 'votacao/login.html')
 
 
 @login_required(login_url='votacao/login')
@@ -166,7 +168,5 @@ def logoutview(request):
 
 
 @login_required(login_url='votacao/login')
-def detalheAluno(request, id):
-    aluno = get_object_or_404(Aluno, id=id)
-    #print(aluno.curso)
-    return render(request, 'votacao/detalheAluno.html', {'aluno': aluno})
+def detalheAluno(request):
+    return render(request, 'votacao/detalheAluno.html')

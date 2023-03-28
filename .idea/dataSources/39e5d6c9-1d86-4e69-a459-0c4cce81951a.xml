@@ -1890,93 +1890,88 @@ model</ColNames>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="612" parent="516" name="grupo">
-      <DasType>varchar(10)|0s</DasType>
+    <column id="612" parent="516" name="votos">
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="613" parent="516" name="votos">
+    <column id="613" parent="516" name="user_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="614" parent="516" name="user_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="615" parent="516">
+    <foreign-key id="614" parent="516">
       <ColNames>user_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>auth_user</RefTableName>
     </foreign-key>
-    <index id="616" parent="516" name="sqlite_autoindex_votacao_aluno_1">
+    <index id="615" parent="516" name="sqlite_autoindex_votacao_aluno_1">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="617" parent="516">
+    <key id="616" parent="516">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="618" parent="516">
+    <key id="617" parent="516">
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_votacao_aluno_1</UnderlyingIndexName>
     </key>
-    <column id="619" parent="517" name="id">
+    <column id="618" parent="517" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="620" parent="517" name="opcao_texto">
+    <column id="619" parent="517" name="opcao_texto">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="621" parent="517" name="votos">
+    <column id="620" parent="517" name="votos">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="622" parent="517" name="questao_id">
+    <column id="621" parent="517" name="questao_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="623" parent="517">
+    <foreign-key id="622" parent="517">
       <ColNames>questao_id</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
       <RefColNames>id</RefColNames>
       <RefTableName>votacao_questao</RefTableName>
     </foreign-key>
-    <index id="624" parent="517" name="votacao_opcao_questao_id_e65d63a9">
+    <index id="623" parent="517" name="votacao_opcao_questao_id_e65d63a9">
       <ColNames>questao_id</ColNames>
     </index>
-    <key id="625" parent="517">
+    <key id="624" parent="517">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="626" parent="518" name="id">
+    <column id="625" parent="518" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="627" parent="518" name="questao_texto">
+    <column id="626" parent="518" name="questao_texto">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="628" parent="518" name="pub_data">
+    <column id="627" parent="518" name="pub_data">
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="629" parent="518">
+    <key id="628" parent="518">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

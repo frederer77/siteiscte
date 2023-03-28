@@ -42,5 +42,5 @@ urlpatterns = [
     path('logout', views.logoutview, name='logout'),
 
     # ex: /
-    path('detalheAluno/<int:id>', views.detalheAluno, name='detalheAluno'),
+    path('detalheAluno', views.detalheAluno, name='detalheAluno'),
 ]

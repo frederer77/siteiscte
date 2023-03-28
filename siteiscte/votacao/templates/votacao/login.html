@@ -12,8 +12,12 @@
     </ul>
   {% endif %}
 
-  <form class="form" method="post">
-    {% csrf_token %} {{ form.as_p }}
+  <form class="form" action="{% url 'votacao:login' %}" method="post">
+    {% csrf_token %}
+    <p>
+      Username: <input type="text" name="nome"/> <br/>
+      Password: <input type="password" name="password"/>
+    </p>
     <input class="btn" type="submit" value="Login" />
     <button class="btn" onclick="window.location.href='{% url 'votacao:criarAluno' %}'" type="button"> Criar conta </button>
 

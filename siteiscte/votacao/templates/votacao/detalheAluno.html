@@ -3,8 +3,8 @@
 
     <p>Nome: {{ request.user.username }}</p>
     <p>Email : {{ request.user.email }}</p>
-    {% if request.user.aluno %}}
-    <p>Cruso: {{ request.user.aluno.curso }}</p>
+    {% if request.user.aluno %}
+    <p>Curso: {{ request.user.aluno.curso }}</p>
     {% endif %}
 
 {% endblock %}

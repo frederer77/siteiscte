@@ -2,8 +2,14 @@
 
 {% include 'votacao/snippets/nav.html' %}
 
-  <form method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" value="Criar" />
-  </form>
+<form method="post">
+  {% csrf_token %}
+  <p>
+    Username:  <input type="text" name="nome"/> <br/>
+    E-mail:  <input type="email" name="email"/> <br/>
+    Curso:  <input type="text" name="curso"/> <br/>
+    Password:  <input type="Password" name="password"/> <br/>
+  </p>
+  <input type="submit" value="Criar" />
+</form>
 {% endblock %}

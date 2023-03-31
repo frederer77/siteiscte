@@ -7,8 +7,8 @@
   <h1>
     {{user.username}}
   </h1>
-    {% if uploaded_image_url %}
-        <img src="{{ uploaded_image_url }}" alt="{{ user.username }}'s profile image" style="max-width: 200px;">
+    {% if not request.user.is_superuser %}
+        <img src="{% static request.user.aluno.image %}" alt="{{ user.username }}'s profile image" style="max-width: 200px;">
     {% else %}
         <img src="{% static 'media/default.png' %}" style="max-width: 200px; max-height: 200px"  alt="default">
     {% endif %}

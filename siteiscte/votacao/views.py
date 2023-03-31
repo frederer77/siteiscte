@@ -93,7 +93,8 @@ def voto(request, questao_id):
                     opcao_seleccionada.votos += 1
                     opcao_seleccionada.save()
             except ValueError:
-                return render(request, 'votacao/detalhe.html', {'questao': questao, 'error_message': "Num de grupo invalido", })
+                return render(request, 'votacao/detalhe.html',
+                              {'questao': questao, 'error_message': "Num de grupo invalido", })
         else:
             opcao_seleccionada.votos += 1
             opcao_seleccionada.save()
@@ -136,7 +137,7 @@ def criarAluno(request):
         if nome and email and curso and password:
             user = User.objects.create_user(nome, email, password)
             user.save()
-            aluno = Aluno.objects.create(user=user, curso=curso)
+            aluno = Aluno.objects.create(user=user, curso=curso, image='media/default.png')
             aluno.save()
             return HttpResponseRedirect(reverse('votacao:login'))
         else:
@@ -172,14 +173,15 @@ def logoutview(request):
 
 @login_required(login_url='votacao/login')
 def detalheAluno(request):
-    return render(request, 'votacao/detalheAluno.html')
-
-
-def fazer_upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
-        return render(request, 'votacao/fazer_upload.html', { 'uploaded_file_url': uploaded_file_url} )
-    return render(request,'votacao/fazer_upload.html')
+        request.user.aluno.image = uploaded_file_url.split('/static/', 1)[1]
+        request.user.aluno.save()
+        return render(request, 'votacao/detalheAluno.html', {'uploaded_file_url': uploaded_file_url})
+    return render(request, 'votacao/detalheAluno.html')
+
+
+

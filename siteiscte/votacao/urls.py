@@ -45,5 +45,4 @@ urlpatterns = [
     # ex: /
     path('detalheAluno', views.detalheAluno, name='detalheAluno'),
 
-    path('fazer_upload', views.fazer_upload, name='fazer_upload'),
 ]

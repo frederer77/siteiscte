@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc414e8-d188-42fc-989e-1ddcd741f60e" name="Changes" comment="css feioso">
-      <change afterPath="$PROJECT_DIR$/siteiscte/votacao/static/votacao/images/iscte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/fazer_upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/siteiscte/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/siteiscte/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/siteiscte/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/siteiscte/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/static/votacao/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/static/votacao/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/detalheAluno.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/detalheAluno.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/fazer_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/fazer_upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/snippets/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/templates/votacao/snippets/nav.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/votacao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/siteiscte/votacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/siteiscte/votacao/views.py" afterDir="false" />
@@ -57,27 +55,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/franciscorodrigues/PycharmProjects/siteiscte/siteiscte/votacao/static/votacao/images",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.rainbow.brackets",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/franciscorodrigues/PycharmProjects/siteiscte/siteiscte/votacao/static/votacao/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.rainbow.brackets&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/siteiscte/votacao/static/votacao/images" />
@@ -157,6 +155,7 @@
       <workItem from="1679835347837" duration="8055000" />
       <workItem from="1679857440071" duration="6846000" />
       <workItem from="1679870437428" duration="330000" />
+      <workItem from="1680288430834" duration="6045000" />
     </task>
     <task id="LOCAL-00001" summary="falta 5.3">
       <created>1679444736665</created>

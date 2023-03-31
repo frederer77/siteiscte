@@ -1,0 +1,23 @@
+
+/*nav-html*/
+
+.navList{
+    list-style-type:none ;
+}
+.navList li{
+
+}
+
+.navList a{
+    display: block;
+    width: 130px;
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    background-color: #55a7ba;
+}
+

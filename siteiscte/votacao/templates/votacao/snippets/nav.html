@@ -1,18 +1,22 @@
+
 <header>
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'votacao/css/app.css' %}">
+
   {% if user.is_authenticated %}
-  <h1>User : {{user.username}}</h1>
+  <h1>{{user.username}}</h1>
   {% else %}
   <h1>Criar Conta</h1>
   {% endif %}
   <!-- nav.html -->
   <nav>
-    <ul>
-      <li><a href="{% url 'votacao:index' %}">Página inicial</a></li>
+    <ul class="navList">
+      <li><a href="{% url 'votacao:index' %}">Página inicial 🏠</a></li>
       {% if user.is_authenticated %}
       {% if not request.user.is_superuser %}
-      <li><a href="{% url 'votacao:detalheAluno' %}">Conta</a></li>
+      <li><a href="{% url 'votacao:detalheAluno' %}">Conta </a></li>
       {% endif %}
-      <li><a href="{% url 'votacao:logout'%}">Logout</a></li>
+      <li><a href="{% url 'votacao:logout'%}">Logout ⎋</a></li>
       {% endif %}
     </ul>
   </nav>

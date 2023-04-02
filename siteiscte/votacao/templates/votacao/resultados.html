@@ -1,6 +1,10 @@
 {% block content %}
 {% include 'votacao/snippets/nav.html' %}
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'votacao/css/mystyle.css' %}">
+
+
 <h1>{{ questao.questao_texto }}</h1>
 <ul>
     {% for opcao in questao.opcao_set.all %}
@@ -9,6 +13,6 @@
         voto{{ opcao.votos|pluralize }}</li>
     {% endfor %}
 </ul>
-<a href="{% url 'votacao:detalhe' questao.id %}">Votar novamente?</a>
+<a class="btn" href="{% url 'votacao:detalhe' questao.id %}">Votar novamente?</a>
 
 {% endblock %}

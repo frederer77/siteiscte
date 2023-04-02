@@ -1,6 +1,9 @@
 {% block content %}
     {% include 'votacao/snippets/nav.html' %}
 
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'votacao/css/app.css' %}">
+
     <p>Nome: {{ request.user.username }}</p>
     <p>Email : {{ request.user.email }}</p>
     {% if request.user.aluno %}
@@ -24,7 +27,7 @@
   </p>
 {% endif %}
 <p>
-   <a href="{% url 'votacao:index' %}">
+   <a class="btn" href="{% url 'votacao:index' %}">
      Voltar ao início
    </a>
 </p>

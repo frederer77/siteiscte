@@ -1,6 +1,9 @@
 {% block content %}
 {% include 'votacao/snippets/nav.html' %} 
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'votacao/css/mystyle.css' %}">
+
   <h1>{{ questao.questao_texto }}</h1>
   {% if error_message %}
   <p><strong>{{ error_message }}</strong></p>
@@ -27,7 +30,7 @@
     <br /><br />
 
   </form>
-  <button onclick="window.location.href='{% url 'votacao:criaropcao' questao.id %}'" type="button">
+  <button class="btn" onclick="window.location.href='{% url 'votacao:criaropcao' questao.id %}'" type="button">
     Criar nova opção
   </button>
 

@@ -20,7 +20,7 @@ urlpatterns = [
     # ex: votacao/criar
     path('criar', views.criarquestao, name='criarquestao'),
 
-    # ex: votacao/eliinar
+    # ex: votacao/eliminar
     path('eliminar', views.eliminarQuestao, name='eliminarQuestao'),
 
     path('eliminar/eliminarQuestao',

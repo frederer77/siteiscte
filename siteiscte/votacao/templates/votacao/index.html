@@ -1,5 +1,6 @@
 
 {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'votacao/css/app.css' %}">
 
 {% block content %}
   {% include 'votacao/snippets/nav.html' %}
@@ -16,8 +17,8 @@
   {% else %}
     <p>Nao ha questoes disponiveis.</p>
   {% endif %}
-  <a href="{% url 'votacao:criarquestao' %}"> Criar Nova Questão</a> <br>
+  <a class="btn" href="{% url 'votacao:criarquestao' %}"> ﹢ Criar Nova Questão</a> <br> <br>
   {% if request.user.is_superuser %}
-  <a href="{% url 'votacao:eliminarQuestao' %}"> Eliminar Questão</a>
+  <a class="btn" href="{% url 'votacao:eliminarQuestao' %}"> Eliminar Questão</a>
   {%endif%}
 {% endblock %}

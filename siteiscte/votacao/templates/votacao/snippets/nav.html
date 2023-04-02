@@ -1,31 +1,38 @@
-
 <header>
-  {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'votacao/css/app.css' %}">
-<img alt="" src="{% static 'votacao/images/iscte.png' %}" style="height: 400px; border: 1px solid black;">
-  {% if user.is_authenticated %}
-  <h1>
-    {{user.username}}
-  </h1>
-    {% if not request.user.is_superuser %}
-        <img src="{% static request.user.aluno.image %}" alt="{{ user.username }}'s profile image" style="max-width: 200px;">
-    {% else %}
-        <img src="{% static 'media/default.png' %}" style="max-width: 200px; max-height: 200px"  alt="default">
-    {% endif %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'votacao/css/app.css' %}">
+    <div class="div1">
+        <img class="iscte" alt="" src="{% static 'votacao/images/iscte.png' %}" style="height: 400px; border: 1px solid black;">
+    </div>
 
-  {% else %}
-  <h1>Criar Conta</h1>
-  {% endif %}
-  <!-- nav.html -->
-  <nav>
-    <ul class="navList">
-      <li><a href="{% url 'votacao:index' %}">Página inicial 🏠</a></li>
-      {% if user.is_authenticated %}
-      {% if not request.user.is_superuser %}
-      <li><a href="{% url 'votacao:detalheAluno' %}">Conta </a></li>
-      {% endif %}
-      <li><a href="{% url 'votacao:logout'%}">Logout ⎋</a></li>
-      {% endif %}
-    </ul>
-  </nav>
+    <section>
+    <div class="div2">
+        {% if user.is_authenticated %}
+        <h1>
+            {{user.username}}
+        </h1>
+        {% if not request.user.is_superuser %}
+        <img class="profile" src="{% static request.user.aluno.image %}" alt="{{ user.username }}'s profile image"
+             style="max-width: 200px;">
+        {% else %}
+        <img class="profile" src="{% static 'media/default.png' %}" style="max-width: 200px; max-height: 200px" alt="default">
+        {% endif %}
+
+        {% else %}
+        <h1>Criar Conta</h1>
+        {% endif %}
+    </div>
+    <!-- nav.html -->
+    <nav>
+        <ul class="navList">
+            <li><a href="{% url 'votacao:index' %}">Página inicial 🏠</a></li>
+            {% if user.is_authenticated %}
+            {% if not request.user.is_superuser %}
+            <li><a href="{% url 'votacao:detalheAluno' %}">Conta </a></li>
+            {% endif %}
+            <li><a href="{% url 'votacao:logout'%}">Logout ⎋</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    </section>
 </header>
